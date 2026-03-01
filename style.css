@@ -1,0 +1,131 @@
+/* 1. Global Setup & Moody Background */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #1a1a2e 0%, #0f0f1a 100%);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.lofi-container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 40px 0;
+}
+
+/* 2. Header & Title */
+h1 {
+    font-size: 50px;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+p {
+    color: #888;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* 3. Neon Now Playing Ticker */
+.now-playing {
+    color: #ff2e63;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px auto;
+    width: 80%;
+    text-shadow: 0 0 10px #ff2e63;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* 4. Music Player Styling */
+.music-player {
+    margin-bottom: 30px;
+}
+
+audio {
+    width: 300px;
+    height: 45px;
+    filter: invert(100%) hue-rotate(180deg) brightness(1.5); /* Makes it look modern */
+}
+
+/* 5. Glowing YouTube Button */
+.youtube-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    margin-bottom: 40px;
+    color: #ff2e63;
+    text-decoration: none;
+    border: 2px solid #ff2e63;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.youtube-btn:hover {
+    background: #ff2e63;
+    color: white;
+    box-shadow: 0 0 20px #ff2e63;
+    transform: scale(1.05);
+}
+
+/* 6. Anime Video Artwork */
+.artwork {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 46, 99, 0.3);
+    border: 2px solid rgba(255, 46, 99, 0.2);
+}
+
+.lofi-video {
+    width: 100%;
+    display: block;
+}
+
+/* 7. Professional Footer */
+.footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 46, 99, 0.1);
+}
+
+.social-links a {
+    color: #ff2e63;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+    text-shadow: 0 0 10px #ff2e63;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    opacity: 0.4;
+}
+
+/* 8. Neon Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f0f1a;
+}
+::-webkit-scrollbar-thumb {
+    background: #ff2e63;
+    border-radius: 10px;
+}
