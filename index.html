@@ -7,19 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="lofi-container">
         <h1>Lofi PLAYBOOK</h1>
         <p>Slowed + Reverb Vibes</p>
 
         <div class="now-playing">
-            <marquee>🎵 Now Playing: Dil Ki Kone Mein (Slowed + Reverb) 🎵</marquee>
+            <marquee>🎵 Now Playing: Dil Ki Kone Mein (Slowed + Reverb)</marquee>
         </div>
 
         <div class="music-player">
-            <audio controls>
-                <source src="music.mp3" type="audio/mpeg">
-            </audio>
+            <audio src="music.mp3" controls id="main-player"></audio>
         </div>
 
         <div class="socials">
@@ -32,16 +29,25 @@
             <video src="lofi.mp4" autoplay loop muted playsinline class="lofi-video"></video>
         </div>
 
-        <div class="footer">
+        <div class="footer"> <div class="poll-container">
+            <h3>What track should I drop next? 👇</h3>
+            <div id="poll-options">
+                <button class="poll-btn" onclick="vote('💔 Heartbroken / Painful')">💔 Heartbroken / Painful</button>
+                <button class="poll-btn" onclick="vote('🚀 Motivational Rap')">🚀 Motivational Rap</button>
+                <button class="poll-btn" onclick="vote('🌿 Mind Fresh Lofi')">🌿 Mind Fresh Lofi</button>
+                <button class="poll-btn" onclick="vote('✨ Good Vibe / Remix')">✨ Good Vibe / Remix</button>
+            </div>
+            <p id="poll-message"></p>
+        </div>
             <p>Connect with Lofi PLAYBOOK</p>
             <div class="social-links">
                 <a href="https://www.facebook.com/your_profile" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/lofiplaybook" target="_blank" style="margin-left: 15px;">Instagram</a>
-                <a href="https://open.spotify.com/artist/your_id" target="_blank" style="margin-left: 15px;">Spotify</a>
-                <a href="https://soundcloud.com/your_username" target="_blank" style="margin-left: 15px;">SoundCloud</a>
+                <a href="https://www.instagram.com/your_username" target="_blank">Instagram</a>
+                <a href="https://soundcloud.com/your_username" target="_blank">SoundCloud</a>
+                <a href="https://open.spotify.com/user/your_id" target="_blank">Spotify</a>
             </div>
-            <p class="copyright">© 2026 Lofi PLAYBOOK. All rights reserved.</p>
+            <p class="copyright">&copy; 2026 Lofi PLAYBOOK. All rights reserved.</p>
         </div>
-
-    </div> </body>
-</html> 
+    </div>
+</body>
+</html>
