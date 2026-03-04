@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     background: radial-gradient(circle, #1a1a2e 0%, #0f0f1a 100%);
@@ -12,139 +12,110 @@ body {
     overflow-x: hidden;
 }
 
-.lofi-container {
-    text-align: center;
-    width: 90%;
-    max-width: 800px;
-    padding: 40px 0;
-}
-
-/* 2. Header & Title */
+/* 2. Header & Typography */
 h1 {
     font-size: 50px;
     letter-spacing: 5px;
-    margin-bottom: 5px;
+    margin: 50px 0 5px 0;
     color: white;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    text-align: center;
 }
 
-p {
+h3 {
     color: #888;
     font-size: 18px;
     margin-bottom: 20px;
+    font-weight: normal;
+    text-align: center;
 }
 
-/* 3. Neon Now Playing Ticker */
-.now-playing {
-    color: #ff2e63;
+/* 3. The Motion Fix: Neon Scrolling Ticker */
+.now-playing-container {
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden;
+    /* This hides the text when it goes off-side */
+    white-space: nowrap;
+    margin: 20px auto;
+    border-top: 1px solid rgba(255, 0, 85, 0.2);
+    border-bottom: 1px solid rgba(255, 0, 85, 0.2);
+    padding: 10px 0;
+}
+
+.now-playing-text {
+    display: inline-block;
+    color: #ff0055;
+    /* Neon Pink */
     font-size: 22px;
     font-weight: bold;
-    margin: 20px auto;
-    width: 80%;
-    text-shadow: 0 0 10px #ff2e63;
+    text-shadow: 0 0 10px #ff0055;
     font-family: 'Courier New', Courier, monospace;
+    animation: scroll-left 12s linear infinite;
+    /* Controls the speed */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 /* 4. Music Player Styling */
 .music-player {
-    margin-bottom: 30px;
+    margin: 20px 0 40px 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid #333;
 }
 
 audio {
     width: 300px;
     height: 45px;
-    filter: invert(100%) hue-rotate(180deg) brightness(1.5); /* Makes it look modern */
+    filter: invert(100%) hue-rotate(180deg) brightness(1.5);
 }
 
-/* 5. Glowing YouTube Button */
+/* 5. Glowing Buttons & Links */
 .youtube-btn {
     display: inline-block;
     padding: 12px 30px;
     margin-bottom: 40px;
-    color: #ff2e63;
+    color: #ff0055;
     text-decoration: none;
-    border: 2px solid #ff2e63;
+    border: 2px solid #ff0055;
     border-radius: 50px;
     font-weight: bold;
     transition: 0.3s;
+    text-shadow: 0 0 5px #ff0055;
 }
 
 .youtube-btn:hover {
-    background: #ff2e63;
+    background: #ff0055;
     color: white;
-    box-shadow: 0 0 20px #ff2e63;
+    box-shadow: 0 0 20px #ff0055;
     transform: scale(1.05);
 }
 
-/* 6. Anime Video Artwork */
-.artwork {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 0 30px rgba(255, 46, 99, 0.3);
-    border: 2px solid rgba(255, 46, 99, 0.2);
-}
-
-.lofi-video {
-    width: 100%;
-    display: block;
-}
-
-/* 7. Professional Footer */
-.footer {
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 46, 99, 0.1);
-}
-
-.social-links a {
-    color: #ff2e63;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+/* 6. Containers (Poll, About, Connect) */
+.glow-box {
+    margin: 20px auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ff0055;
     transition: 0.3s;
 }
 
-.footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* This centers everything */
-    justify-content: center;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px; /* This adds space between the links */
-    justify-content: center;
-    flex-wrap: wrap; /* This ensures they don't go off-screen on mobile */
-    margin-top: 10px;
-}
-
-.social-links a {
-    color: #ff0055; /* Your neon pink color */
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.poll-container {
-    margin: 30px auto;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 400px;
-    border: 1px solid #ff0055; /* Neon Pink Border */
-}
-
-.poll-container h3 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
+.glow-box:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
 }
 
 .poll-btn {
@@ -153,7 +124,7 @@ audio {
     background: transparent;
     color: white;
     border: 1px solid #ff0055;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     border-radius: 8px;
     cursor: pointer;
@@ -164,12 +135,43 @@ audio {
 .poll-btn:hover {
     background: #ff0055;
     color: white;
-    font-weight: bold;
+    box-shadow: 0 0 15px #ff0055;
 }
 
-#poll-message {
+/* 7. Social Footer */
+.footer {
+    width: 90%;
+    max-width: 600px;
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 0, 85, 0.2);
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.social-links a {
     color: #ff0055;
+    text-decoration: none;
     font-weight: bold;
-    margin-top: 15px;
-    font-size: 1.1rem;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    border-bottom: 1px solid #ff0055;
+    text-shadow: 0 0 10px #ff0055;
+}
+
+.disclaimer {
+    color: #666;
+    font-size: 12px;
+    line-height: 1.5;
 }
